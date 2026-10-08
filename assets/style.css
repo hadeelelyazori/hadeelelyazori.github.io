@@ -110,6 +110,15 @@ section > h2 { font-size: 1.5rem; margin-bottom: 1.25rem; }
 .contact-list li { padding: .15rem 0; }
 .contact-list span { display: inline-block; min-width: 7rem; color: var(--muted); }
 
+.gallery { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin: 0 0 .5rem; }
+.gallery figure { margin: 0; }
+.gallery img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; display: block; border-radius: 4px; border: 1px solid var(--rule); background: var(--side); }
+.gallery img.top { object-position: 50% 25%; }
+.gallery figcaption { margin-top: .5rem; color: var(--muted); font-size: .88rem; line-height: 1.45; }
+.gallery + .pubs-label { margin-top: 2rem; }
+.press li { padding: .4rem 0; }
+.press li > span { display: block; color: var(--muted); font-size: .95rem; }
+
 .name-note { color: var(--muted); font-size: .95rem; margin-top: 1.5rem; }
 .name-note bdi { font-size: 1.1em; }
 
@@ -131,6 +140,7 @@ footer { margin-top: 1rem; padding-top: 1.5rem; border-top: 1px solid var(--rule
   .news li, .pub, .entry, .skills { grid-template-columns: 1fr; gap: .1rem; }
   .skills dd { margin-bottom: .6rem; }
   .lede { font-size: 1.15rem; }
+  .gallery { grid-template-columns: 1fr; }
 }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
 @media print {
