@@ -124,6 +124,17 @@ section > h2 { font-size: 1.5rem; margin-bottom: 1.25rem; }
 .press-feature { display: grid; grid-template-columns: 16rem minmax(0, 1fr); gap: 1.25rem; align-items: center; padding: .4rem 0 .6rem; }
 .press-feature img { width: 100%; height: auto; display: block; border-radius: 4px; border: 1px solid var(--rule); }
 .press-feature span { display: block; color: var(--muted); font-size: .95rem; margin-top: .15rem; }
+.press-feature blockquote { margin: .9rem 0 0; padding-left: .9rem; border-left: 2px solid var(--accent); font-family: "Source Serif 4", Georgia, serif; font-size: 1.05rem; line-height: 1.5; }
+.press-feature cite { display: block; margin-top: .25rem; font: normal .88rem/1.4 "Source Sans 3", system-ui, sans-serif; color: var(--muted); }
+
+.zoomable { cursor: zoom-in; }
+#lightbox { border: 0; padding: 0; background: transparent; max-width: 96vw; max-height: 96vh; width: 100%; color: #fff; overflow: visible; }
+#lightbox::backdrop { background: rgba(8, 12, 16, .88); }
+#lightbox[open] { display: flex; flex-direction: column; align-items: center; justify-content: center; margin: auto; }
+#lightbox img { max-width: 96vw; max-height: 84vh; width: auto; height: auto; object-fit: contain; cursor: zoom-out; border-radius: 3px; background: #fff; }
+.lb-cap { margin: .75rem 1rem 0; max-width: 46rem; text-align: center; font-size: .95rem; line-height: 1.45; color: #e6eaee; }
+.lb-close { position: fixed; top: .75rem; right: 1rem; width: 2.5rem; height: 2.5rem; border: 0; border-radius: 50%; background: rgba(255,255,255,.15); color: #fff; font-size: 1.6rem; line-height: 1; cursor: pointer; }
+.lb-close:hover { background: rgba(255,255,255,.28); }
 .press li { padding: .4rem 0; }
 .press li > span { display: block; color: var(--muted); font-size: .95rem; }
 

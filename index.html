@@ -249,11 +249,11 @@
       <h3 class="pubs-label">Diplomas</h3>
       <div class="diplomas">
         <figure>
-          <a href="assets/img/diplomas/ms.jpg"><img src="assets/img/diplomas/ms.jpg" alt="Master of Science diploma, Applied Information Technology, George Mason University, May 2024" loading="lazy"></a>
+          <a href="assets/img/full/ms.jpg"><img src="assets/img/diplomas/ms.jpg" data-full="assets/img/full/ms.jpg" alt="Master of Science diploma, Applied Information Technology, George Mason University, May 2024" loading="lazy"></a>
           <figcaption>MS, George Mason University, May 2024</figcaption>
         </figure>
         <figure>
-          <a href="assets/img/diplomas/bs.jpg"><img src="assets/img/diplomas/bs.jpg" alt="Bachelor of Science diploma with distinction, Computer Science, American University of Beirut, June 2022" loading="lazy"></a>
+          <a href="assets/img/full/bs.jpg"><img src="assets/img/diplomas/bs.jpg" data-full="assets/img/full/bs.jpg" alt="Bachelor of Science diploma with distinction, Computer Science, American University of Beirut, June 2022" loading="lazy"></a>
           <figcaption>BS with distinction, American University of Beirut, June 2022</figcaption>
         </figure>
       </div>
@@ -356,11 +356,11 @@
       <h2>Talks and press</h2>
       <div class="gallery">
         <figure>
-          <img src="assets/img/talks/capstone.jpg" alt="Hadeel speaking into a microphone while presenting her capstone project" loading="lazy">
+          <img src="assets/img/talks/capstone.jpg" data-full="assets/img/full/capstone.jpg" alt="Hadeel speaking into a microphone while presenting her capstone project" loading="lazy">
           <figcaption>Presenting my capstone project to MEPI administrators and US Embassy staff in Lebanon.</figcaption>
         </figure>
         <figure>
-          <img class="top" src="assets/img/talks/tlp-team.jpg" alt="Hadeel with two teammates in front of a lecture hall sign" loading="lazy">
+          <img class="top" src="assets/img/talks/tlp-team.jpg" data-full="assets/img/full/tlp-team.jpg" alt="Hadeel with two teammates in front of a lecture hall sign" loading="lazy">
           <figcaption>With my team after our Tomorrow's Leaders College-to-Work Pipeline presentation.</figcaption>
         </figure>
         <figure>
@@ -375,6 +375,7 @@
         <div>
           <a href="https://news.lau.edu.lb/2022/the-new-generation-of-mepi-tlers-will-lead-with-their-hearts.php">The new generation of MEPI TLers will lead with their hearts</a>
           <span>LAU News, 2022. Coverage of the Tomorrow's Leaders graduation, where I gave the valedictorian speech.</span>
+          <blockquote>&ldquo;We are each a patchwork quilt of those who loved and believed in us.&rdquo;<cite>From my valedictorian speech, as quoted by LAU News</cite></blockquote>
         </div>
       </div>
       <ul class="press">
@@ -398,8 +399,40 @@
   </main>
 </div>
 
+<dialog id="lightbox" aria-label="Enlarged image">
+  <button type="button" class="lb-close" aria-label="Close">&times;</button>
+  <img alt="">
+  <p class="lb-cap"></p>
+</dialog>
+
 <script>
   document.getElementById('yr').textContent = new Date().getFullYear();
+
+  // Click any photo to view it larger.
+  (function () {
+    var box = document.getElementById('lightbox');
+    if (!box || typeof box.showModal !== 'function') return;
+    var big = box.querySelector('img'), cap = box.querySelector('.lb-cap');
+    function open(img) {
+      var fig = img.closest('figure'), fc = fig && fig.querySelector('figcaption');
+      big.src = img.getAttribute('data-full') || img.currentSrc || img.src;
+      big.alt = img.alt;
+      cap.textContent = fc ? fc.textContent : img.alt;
+      box.showModal();
+    }
+    document.querySelectorAll('.photo, .gallery img, .diplomas img, .press-feature img').forEach(function (img) {
+      img.classList.add('zoomable');
+      img.tabIndex = 0;
+      img.setAttribute('role', 'button');
+      img.setAttribute('aria-label', 'Enlarge image: ' + img.alt);
+      img.addEventListener('click', function (e) { e.preventDefault(); open(img); });
+      img.addEventListener('keydown', function (e) {
+        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(img); }
+      });
+    });
+    box.addEventListener('click', function () { box.close(); });   // click anywhere to close
+    box.addEventListener('close', function () { big.removeAttribute('src'); });
+  })();
 
   // Highlight the section currently in view in the contents list.
   (function () {
