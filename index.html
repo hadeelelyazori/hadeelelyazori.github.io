@@ -359,11 +359,17 @@
       <h3 class="pubs-label">Upcoming</h3>
       <div class="entry">
         <div class="date">Oct 15, 2026</div>
-        <div>
+        <div class="event-body">
+          <div>
           <h3>Panelist, <i>Engage!</i> Healthcare Access</h3>
           <p class="org">Office of Community Engagement and Civic Learning (CECiL) and the Center for MedTech Innovation, George Mason University</p>
           <p>A panel and roundtable on healthcare access, equity, barriers and community solutions, bringing together community agencies and university faculty, staff and students. I will speak from the information technology perspective. Johnson Center, George's Cafe (3rd floor), 11:30 AM to 2:00 PM.</p>
-          <p><a href="https://prehealth.gmu.edu/health-professions-newsletter-8-31-26/">Event listing, GMU Pre-Health newsletter</a> &middot; <a href="https://medtech.gmu.edu/">Center for MedTech Innovation</a></p>
+          <p><a href="https://cecil.gmu.edu/engage">Event page</a> &middot; <a href="https://medtech.gmu.edu/">Center for MedTech Innovation</a></p>
+          </div>
+          <figure class="event-flyer">
+            <img src="assets/img/talks/engage-flyer.jpg" alt="Flyer for the Engage! Healthcare Access panel and roundtable on October 15, 2026" loading="lazy">
+            <figcaption>Event flyer</figcaption>
+          </figure>
         </div>
       </div>
 
@@ -434,7 +440,7 @@
       cap.textContent = fc ? fc.textContent : img.alt;
       box.showModal();
     }
-    document.querySelectorAll('.photo, .gallery img, .diplomas img, .press-feature img').forEach(function (img) {
+    document.querySelectorAll('.photo, .gallery img, .diplomas img, .press-feature img, .event-flyer img').forEach(function (img) {
       img.classList.add('zoomable');
       img.tabIndex = 0;
       img.setAttribute('role', 'button');
