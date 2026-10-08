@@ -182,9 +182,10 @@
       <h2>Experience</h2>
 
       <div class="entry">
-        <div class="date">Current</div>
-        <div>
-          <h3>AI/ML Development Intern</h3>
+        <div class="date">Summer 2026</div>
+        <div class="with-photo">
+          <div>
+          <h3>Data Science Intern</h3>
           <p class="org">American Institutes for Research (AIR), through the Digital Innovation Industry Graduate Internships program at GMU's Institute for Digital Innovation</p>
           <ul>
             <li>Building components of agentic applications focused on ethical AI and agentic automation.</li>
@@ -192,6 +193,11 @@
             <li>Exploring large and small language model solutions to support business operations and research project delivery.</li>
             <li>Contributing to cloud-based and on-premises applications and their user interfaces.</li>
           </ul>
+          </div>
+          <figure class="entry-photo">
+            <img src="assets/img/talks/air.jpg" alt="Hadeel in front of the American Institutes for Research logo" loading="lazy">
+            <figcaption>At the AIR office.</figcaption>
+          </figure>
         </div>
       </div>
 
@@ -374,14 +380,14 @@
       <h3 class="pubs-label">Upcoming</h3>
       <div class="entry">
         <div class="date">Oct 15, 2026</div>
-        <div class="event-body">
+        <div class="with-photo">
           <div>
           <h3>Panelist, <i>Engage!</i> Healthcare Access</h3>
           <p class="org">Office of Community Engagement and Civic Learning (CECiL) and the Center for MedTech Innovation, George Mason University</p>
           <p>A panel and roundtable on healthcare access, equity, barriers and community solutions, bringing together community agencies and university faculty, staff and students. I will speak from the information technology perspective. Johnson Center, George's Cafe (3rd floor), 11:30 AM to 2:00 PM.</p>
           <p><a href="https://cecil.gmu.edu/engage">Event page</a> &middot; <a href="https://medtech.gmu.edu/">Center for MedTech Innovation</a></p>
           </div>
-          <figure class="event-flyer">
+          <figure class="entry-photo">
             <img src="assets/img/talks/engage-flyer.jpg" alt="Flyer for the Engage! Healthcare Access panel and roundtable on October 15, 2026" loading="lazy">
             <figcaption>Event flyer</figcaption>
           </figure>
@@ -456,7 +462,7 @@
       cap.textContent = fc ? fc.textContent : img.alt;
       box.showModal();
     }
-    document.querySelectorAll('.photo, .gallery img, .diplomas img, .press-feature img, .event-flyer img').forEach(function (img) {
+    document.querySelectorAll('.photo, .gallery img, .diplomas img, .press-feature img, .entry-photo img').forEach(function (img) {
       img.classList.add('zoomable');
       img.tabIndex = 0;
       img.setAttribute('role', 'button');
