@@ -158,6 +158,7 @@ section > h2 { font-size: 1.5rem; margin-bottom: 1.25rem; }
 .thumbs img:hover { box-shadow: 0 3px 10px rgba(0,0,0,.18); transform: translateY(-1px); }
 .thumbs figcaption { display: table-caption; caption-side: bottom; padding-top: .35rem; color: var(--muted); font-size: .85rem; line-height: 1.35; }
 .thumbs.sm { --h: 6.5rem; }
+.thumbs.md { --h: 8.5rem; }
 .thumbs.lg { --h: 11rem; }
 .thumbs.photos { --h: 12rem; }
 .group { margin: 0 0 2rem; }
@@ -193,6 +194,7 @@ footer { margin-top: 1rem; padding-top: 1.5rem; border-top: 1px solid var(--rule
   .gallery, .diplomas, .press-feature, .with-photo { grid-template-columns: 1fr; }
   .thumbs.lg, .thumbs.photos { --h: 9rem; }
   .thumbs.sm { --h: 5.5rem; }
+  .thumbs.md { --h: 7rem; }
   .with-photo.cert { grid-template-columns: 1fr; }
   .entry-photo { max-width: 16rem; }
 }
