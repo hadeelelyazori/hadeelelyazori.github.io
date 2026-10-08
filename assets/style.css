@@ -116,6 +116,11 @@ section > h2 { font-size: 1.5rem; margin-bottom: 1.25rem; }
 .gallery img.top { object-position: 50% 25%; }
 .gallery figcaption { margin-top: .5rem; color: var(--muted); font-size: .88rem; line-height: 1.45; }
 .gallery + .pubs-label { margin-top: 2rem; }
+.entry + .pubs-label { margin-top: 1.75rem; }
+.diplomas { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.5fr); gap: 1.25rem; align-items: start; }
+.diplomas figure { margin: 0; }
+.diplomas img { width: 100%; height: auto; display: block; border: 1px solid var(--rule); border-radius: 4px; background: #fff; }
+.diplomas figcaption { margin-top: .5rem; color: var(--muted); font-size: .88rem; line-height: 1.45; }
 .press li { padding: .4rem 0; }
 .press li > span { display: block; color: var(--muted); font-size: .95rem; }
 
@@ -140,7 +145,7 @@ footer { margin-top: 1rem; padding-top: 1.5rem; border-top: 1px solid var(--rule
   .news li, .pub, .entry, .skills { grid-template-columns: 1fr; gap: .1rem; }
   .skills dd { margin-bottom: .6rem; }
   .lede { font-size: 1.15rem; }
-  .gallery { grid-template-columns: 1fr; }
+  .gallery, .diplomas { grid-template-columns: 1fr; }
 }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
 @media print {
