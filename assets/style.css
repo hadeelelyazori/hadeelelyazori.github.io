@@ -165,6 +165,7 @@ section > h2 { font-size: 1.5rem; margin-bottom: 1.25rem; }
 .group p { margin: .15rem 0 0; color: var(--muted); font-size: .95rem; }
 .entry .thumbs { margin-bottom: .25rem; }
 
+.with-photo.cert { grid-template-columns: minmax(0, 1fr) 11.5rem; align-items: start; }
 .press li { padding: .4rem 0; }
 .press li > span { display: block; color: var(--muted); font-size: .95rem; }
 
@@ -192,6 +193,7 @@ footer { margin-top: 1rem; padding-top: 1.5rem; border-top: 1px solid var(--rule
   .gallery, .diplomas, .press-feature, .with-photo { grid-template-columns: 1fr; }
   .thumbs.lg, .thumbs.photos { --h: 9rem; }
   .thumbs.sm { --h: 5.5rem; }
+  .with-photo.cert { grid-template-columns: 1fr; }
   .entry-photo { max-width: 16rem; }
 }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
