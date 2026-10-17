@@ -7,6 +7,7 @@
   --accent: #1f5f7f;
   --accent-ink: #174a63;
   --mark: #e8f1f6;
+  --band: #f6f8fa;
   color-scheme: light dark;
 }
 @media (prefers-color-scheme: dark) {
@@ -19,6 +20,7 @@
     --accent: #7fb8d4;
     --accent-ink: #a6d0e4;
     --mark: #1d2a33;
+    --band: #151b21;
   }
 }
 
@@ -70,10 +72,11 @@ ul { margin: 0; padding: 0; list-style: none; }
 .toc a:hover { color: var(--ink); }
 .toc a.on { color: var(--ink); border-left-color: var(--accent); font-weight: 600; }
 
-main { padding: 3.5rem 4rem 4rem; max-width: 56rem; }
-section { padding-bottom: 2.75rem; }
-section + section { padding-top: 2.75rem; border-top: 1px solid var(--rule); }
-section > h2 { font-size: 1.5rem; margin-bottom: 1.25rem; }
+main { padding: 0; min-width: 0; }
+main section { padding: 3.25rem max(3rem, calc((100% - 50rem) / 2)); }
+main section:nth-of-type(even) { background: var(--band); border-block: 1px solid var(--rule); }
+section > h2 { font-size: 1.75rem; margin-bottom: 1.5rem; }
+section > h2::after { content: ""; display: block; width: 2.5rem; height: 3px; margin-top: .6rem; background: var(--accent); border-radius: 2px; }
 .lede { font-size: 1.25rem; line-height: 1.55; font-family: "Source Serif 4", Georgia, serif; }
 
 /* ---------- content blocks ---------- */
@@ -168,6 +171,14 @@ section > h2 { font-size: 1.5rem; margin-bottom: 1.25rem; }
 
 .with-photo.cert { grid-template-columns: minmax(0, 1fr) 11.5rem; align-items: start; }
 .news-thumb { display: block; margin-top: .5rem; height: 6.5rem; width: auto; border: 1px solid var(--rule); border-radius: 4px; }
+.skill-cards { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; }
+.skill-card { background: var(--bg); border: 1px solid var(--rule); border-radius: 8px; padding: 1rem 1.15rem 1.1rem; }
+.skill-card h3 { font: 600 1.02rem/1.3 "Source Sans 3", system-ui, sans-serif; margin-bottom: .65rem; }
+.chips { display: flex; flex-wrap: wrap; gap: .4rem; }
+.chips li { padding: .12rem .7rem; font-size: .88rem; line-height: 1.5; border: 1px solid var(--rule); border-radius: 999px; background: var(--band); }
+.pub .lk { display: flex; flex-wrap: wrap; gap: .4rem; margin-top: .5rem; }
+.pub .lk a { padding: .08rem .75rem; font-size: .82rem; line-height: 1.6; text-decoration: none; border: 1px solid var(--rule); border-radius: 999px; background: var(--bg); }
+.pub .lk a:hover { border-color: var(--accent); }
 .press li { padding: .4rem 0; }
 .press li > span { display: block; color: var(--muted); font-size: .95rem; }
 
@@ -185,7 +196,7 @@ footer { margin-top: 1rem; padding-top: 1.5rem; border-top: 1px solid var(--rule
   .toc ul { display: flex; flex-wrap: wrap; gap: .25rem 1.1rem; }
   .toc a { padding: 0; margin: 0; border: 0; border-bottom: 2px solid transparent; }
   .toc a.on { border-left: 0; border-bottom-color: var(--accent); }
-  main { padding: 2rem 1.25rem 3rem; }
+  main section { padding: 2.25rem 1.25rem; }
 }
 @media (max-width: 600px) {
   body { font-size: 16.5px; }
@@ -195,6 +206,7 @@ footer { margin-top: 1rem; padding-top: 1.5rem; border-top: 1px solid var(--rule
   .gallery, .diplomas, .press-feature, .with-photo { grid-template-columns: 1fr; }
   .thumbs.lg, .thumbs.photos { --h: 9rem; }
   .thumbs.sm { --h: 5.5rem; }
+  .skill-cards { grid-template-columns: 1fr; }
   .thumbs.md { --h: 7rem; }
   .with-photo.cert { grid-template-columns: 1fr; }
   .entry-photo { max-width: 16rem; }
