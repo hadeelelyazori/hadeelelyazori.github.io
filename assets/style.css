@@ -73,7 +73,9 @@ ul { margin: 0; padding: 0; list-style: none; }
 .toc a.on { color: var(--ink); border-left-color: var(--accent); font-weight: 600; }
 
 main { padding: 0; min-width: 0; }
-main section { padding: 3.25rem max(3rem, calc((100% - 50rem) / 2)); }
+main section { padding: 3.25rem 4rem; }
+main section > * { max-width: 66rem; }
+main section > p, .lede, .theme p { max-width: 46rem; }
 main section:nth-of-type(even) { background: var(--band); border-block: 1px solid var(--rule); }
 section > h2 { font-size: 1.75rem; margin-bottom: 1.5rem; }
 section > h2::after { content: ""; display: block; width: 2.5rem; height: 3px; margin-top: .6rem; background: var(--accent); border-radius: 2px; }
