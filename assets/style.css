@@ -167,6 +167,7 @@ section > h2 { font-size: 1.5rem; margin-bottom: 1.25rem; }
 .entry .thumbs { margin-bottom: .25rem; }
 
 .with-photo.cert { grid-template-columns: minmax(0, 1fr) 11.5rem; align-items: start; }
+.news-thumb { display: block; margin-top: .5rem; height: 6.5rem; width: auto; border: 1px solid var(--rule); border-radius: 4px; }
 .press li { padding: .4rem 0; }
 .press li > span { display: block; color: var(--muted); font-size: .95rem; }
 
