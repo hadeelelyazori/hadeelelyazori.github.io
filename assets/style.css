@@ -25,12 +25,12 @@
 }
 
 * { box-sizing: border-box; }
-html { scroll-behavior: smooth; scroll-padding-top: 1.5rem; }
+html { scroll-behavior: smooth; scroll-padding-top: 1.5rem; font-size: clamp(16px, 0.45vw + 9.5px, 20px); }
 body {
   margin: 0;
   background: var(--bg);
   color: var(--ink);
-  font: 400 17px/1.65 "Source Sans 3", system-ui, -apple-system, "Segoe UI", sans-serif;
+  font: 400 1.0625rem/1.65 "Source Sans 3", system-ui, -apple-system, "Segoe UI", sans-serif;
   -webkit-font-smoothing: antialiased;
 }
 a { color: var(--accent); text-decoration-thickness: 1px; text-underline-offset: 3px; }
@@ -41,7 +41,7 @@ p { margin: 0 0 1em; }
 ul { margin: 0; padding: 0; list-style: none; }
 
 /* ---------- layout ---------- */
-.page { display: grid; grid-template-columns: 320px minmax(0, 1fr); min-height: 100vh; }
+.page { display: grid; grid-template-columns: 20rem minmax(0, 1fr); min-height: 100vh; }
 
 .profile {
   position: sticky; top: 0; align-self: start; height: 100vh;
@@ -74,8 +74,14 @@ ul { margin: 0; padding: 0; list-style: none; }
 
 main { padding: 0; min-width: 0; }
 main section { padding: 3.25rem 4rem; }
-main section > * { max-width: 66rem; }
-main section > p, .lede, .theme p { max-width: 46rem; }
+main section > p, .lede, .theme p { max-width: 54rem; }
+.about-cols p { max-width: none; }
+@media (min-width: 1500px) {
+  .about-cols { column-count: 2; column-gap: 3.5rem; max-width: none; }
+  .about-cols p { break-inside: avoid; }
+  .themes { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.75rem 3.5rem; }
+  .theme p { max-width: none; }
+}
 main section:nth-of-type(even) { background: var(--band); border-block: 1px solid var(--rule); }
 section > h2 { font-size: 1.75rem; margin-bottom: 1.5rem; }
 section > h2::after { content: ""; display: block; width: 2.5rem; height: 3px; margin-top: .6rem; background: var(--accent); border-radius: 2px; }
